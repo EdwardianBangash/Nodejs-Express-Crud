@@ -1,0 +1,28 @@
+<div class="container pt-5">
+    <a href="/addUser">Add User</a>
+    <table class="table table-bordered mt-5">
+        <tr class="thead bg-dark text-light">
+            <td>#</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Action</td>
+        </tr>
+        <tbody>
+            <%
+                for(let i = 0; i < users.length; i++){
+            %>
+            <tr>
+                <td><%=users[i].id%></td>
+                <td><%=users[i].name%></td>
+                <td><%=users[i].age%></td>
+                <td>
+                    <a href="/editUser?id=<%=users[i].id%>">Edit</a>
+                    <a href="/deleteUser?id=<%=users[i].id%>">Delete</a>
+                </td>
+            </tr>
+            <%
+                }
+            %>
+        </tbody>
+    </table>
+</div>
